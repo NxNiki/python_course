@@ -28,6 +28,11 @@ class Point:
     def __gt__(self, other):
         return self.x > other.x and self.y > other.y
 
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+
+
     # we don't need to define __lt__ as python automatically figure it out.i
 
 
@@ -62,4 +67,7 @@ other = Point(1, 2)
 print(point == other)
 print(point < other)
 print(point > other)
+
+# arithmetic operations:
+print(point + other)
 
