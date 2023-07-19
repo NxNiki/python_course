@@ -119,3 +119,18 @@ while number > 0:
   number //= 2
   
 
+command = ""
+while command != "quit" and command != "QUIT":
+  command = input(">")
+  print("ECHO", command)
+
+while command.lower() != "quit":
+  command = input(">")
+  print("ECHO", command)
+
+# infinite loop:
+while True:
+  command = input(">")
+  print("ECHO", command)
+  if command.lower() == "quit":
+    break
