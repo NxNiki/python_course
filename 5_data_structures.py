@@ -134,7 +134,7 @@ if stack:
 queue = [1, 2, 3]
 queue.pop(0)
 
-# every time we remove the first item, all the following items must be moved forward. So we use deque:
+# Every time we remove the first item, all the following items must be moved forward. So we use deque:
 from collections import deque
 queue = deque([])
 queue.append(1)
@@ -214,5 +214,89 @@ if 1 in first:
   print("yes")
 
 # dictionary:
+point = {"x": 1, "y": 2} # keys need to be immutable
+point = dict(x=1, y=2)
+point["x"]
+point["z"] = 30
+
+if "a" in point:
+  print(point["a"])
+
+point.get("a")
+point.get("a", 0) # return 0 if key does not exist
+del point["x"]
+
+for x in point:
+  print(x)
+
+for x in point.items():
+  print(x)
+
+for key, val in point.items():
+  print(key, val)
+
+# dictionary comprehensions:
+# set:
+values = {x * 2 for x in range(5)}
+
+# dict:
+values = {x: x*2 for x in range(5)}
+
+# generator object:
+# Loop over large lists can be memory inefficient. so we use generator object.
+values = (x*2 for x in range(10))
+for x in values:
+  print(x)
+
+from sys import getsizeof
+values = (x*2 for x in range(100000))
+print("gen:", getsizeof(values))
+
+len(value) # ERROR: generator has no len()
+
+values = [x*2 for x in range(100000)]
+
+# unpacking operator:
+numbers = [1, 2, 3]
+print(numbers)
+
+print(1, 2, 3)
+
+print(*number)
+
+# unpack any iterables
+values = [*range(5)]
+values = [*"hello"]
+values = [*range, *"hello"]
+
+first = [1, 2]
+second = [2]
+
+values = [*first, "a", *second, *"hello"]
+
+first = {"x": 1}
+second = {"x": 10, "y": 2}
+combined = {**first, **second, "z": 1}
+# the last x is used in this case.
 
 
+print("list:", getsizeof(values))
+
+
+# exercies:
+from pprint import pprint
+sentense = "This is a common interview question"
+char_frequency = {}
+for char in sentence:
+  if char in char_frequency:
+    char_frequency[char] += 1
+  else:
+    char_frequency[char] = 1
+
+pprint(char_frequency, width=1)
+# dicts are unordered collections
+
+char_frequency_sorted = sorted(
+  char_frequency.items(), 
+  key=lambda x: x[1], 
+  reverse=True)
