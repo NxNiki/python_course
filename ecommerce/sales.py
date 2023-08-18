@@ -8,3 +8,12 @@ def calc_tax():
 
 def calc_shipping():
   pass
+
+# if we import this module into another module, __name__ will be 'ecommerce'.
+# if we run this module directly, __name__ will be '__main__'.
+
+if __name__ == '__main__':
+  print("Sales started")
+  calc_tax()
+
+
