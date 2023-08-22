@@ -182,9 +182,73 @@ dt = datetime.strptime("2018/01/01", "%Y/%m%d")
 dt = datetime.fromtimestamp(time.time())
 
 print(f"{dt.year}/{dt.month}")
-
 print(dt.strftime("%Y/%m%d"))
-
 print(dt2 > dt1)
+
+## time deltas:
+duration = dt2 - dt1
+duration.days
+duration.seconds
+duration.total_seconds()
+
+## add one day:
+dt1 = datetime(2018, 1, 1) + timedelata(1)
+dt1 = datetime(2018, 1, 1) + timedelata(days=1, seconds=1000)
+
+# random values:
+import random
+
+# random value between 0 and 1:
+random.random()
+random.random(1, 10)
+random.choice([1, 2, 3, 4])
+random.choices([1, 2, 3, 4], k=2))
+
+import string
+string.ascii_letters
+# generate 4 digits password:
+"".join(random.choices(string.ascii_letters, k=4))
+"".join(random.choices(string.ascii_lowercase, k=4))
+"".join(random.choices(string.ascii_uppercase, k=4))
+"".join(random.choices(string.ascii_digits, k=4))
+
+"".join(random.choices(string.ascii_letters + string.ascii_digits, k=4))
+
+random.shuffle([1, 2, 3, 4])
+
+# open web browser:
+import webbrowser
+webbrowser.open("http://google.com")
+
+# send emails:
+## mime: multipurpose internet mail extensions
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from smtplib
+
+message = MIMENultipart()
+message["from"] = "Mosh Hamedani"
+message["to"] = "testuser@codewithmosh.com"
+message["subject"] = "This is a test"
+message.attach(MINEText("Body"))
+message.attach(MINEImage(Path("mosh.png").read_bytes())
+
+smtp = smtplib.SMTP(host="smtp.gmail.com", port=587)
+smtp.close()
+
+# or:
+with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
+  smtp.ehlo()
+  smtp.starttls()
+  smtp.login("testuser@codewithmosh.com", "password****")
+  smtp.send_message(message)
+  
+
+## template:
+## use html to build template of email.
+
+
+
 
 
