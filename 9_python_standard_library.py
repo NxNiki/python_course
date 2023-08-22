@@ -248,7 +248,10 @@ with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
 ## template:
 ## use html to build template of email.
 
+from string import Template
+template = Template(Path("template.html").read_text())
+body = template.subsitute({"name": "John"})
 
-
+message.attach(MINEText(body, "html"))
 
 
