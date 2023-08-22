@@ -251,7 +251,57 @@ with smtplib.SMTP(host="smtp.gmail.com", port=587) as smtp:
 from string import Template
 template = Template(Path("template.html").read_text())
 body = template.subsitute({"name": "John"})
+body = template.subsitute(name="John")
 
 message.attach(MINEText(body, "html"))
+
+
+# command line arguments:
+import sys
+sys.argv
+
+if len(sys.argv) == 1:
+  print("USAGE: python3 app.py <password>")
+else:
+  password = sys.argv[1]
+  print("Password", password)
+
+# running external programs:
+import subprocess
+
+# legacy methods, not recommended:
+subprocess.call
+subprocess.check_call
+subprocess.check_output
+subprocess.Popen
+
+completed = subprocess.run(["ls", "-l"])
+print("args", completed.args)
+print("returncode", completed.returncode)
+print("stderr", completed.stderr)
+print("stdout", completed.stdout)
+
+# redirect output to com;eted.stdout:
+completed = subprocess.run(["ls", "-l"], capture_output=True, text=True)
+print("stdout", completed.stdout)
+
+
+completed = subprocess.run(["python3", "other.py"], capture_output=True, text=True)
+print("args", completed.args)
+print("returncode", completed.returncode)
+print("stderr", completed.stderr)
+print("stdout", completed.stdout)
+
+# check for errors:
+try:
+  completed = subprocess.run(["false"], capture_output=True, text=True, check=True)
+  print("args", completed.args)
+  print("returncode", completed.returncode)
+  print("stderr", completed.stderr)
+  print("stdout", completed.stdout)
+except subprocessCalledProcessError as ex:
+  print(ex)
+
+
 
 
