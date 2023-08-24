@@ -55,5 +55,21 @@ pipenv update --outdated
 # udpate specific package:
 pipenv update requests
 
+# Pydoc:
+pydoc3 math
+
+## press space to go the next page
+## press q to exit
+
+pydoc3 moshpdf.pdf2text
+
+## write documentation to a html file:
+pydoc3 -w moshpdf.pdf2text
+
+## start a webserver:
+pydoc3 -p 1234
+
+
+
 
 
