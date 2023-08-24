@@ -21,3 +21,8 @@ for business in businesses:
   print(business["name"])
 
 names = [business["name"] for business in businesses if business["rating"] > 4.5]
+
+# hiding API keys:
+## put api key in a file config.py and remove it from git hub.
+
+
