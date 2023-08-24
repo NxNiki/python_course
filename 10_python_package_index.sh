@@ -40,6 +40,20 @@ pipenv shell
 # deactivate:
 exit
 
+# Managing dependencies:
+## list all the install dependencies:
+pipenv graph
+
+pipenv uninstall requests
+# dependencies of requests will not be removed.
+
+pipenv install requests=2.9.*
+
+# find outdated packages:
+pipenv update --outdated
+
+# udpate specific package:
+pipenv update requests
 
 
 
