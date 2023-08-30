@@ -1,7 +1,9 @@
 ## install django:
 
 `mkdir vidly`
+
 `cd vidly`
+
 `pipenv install django==2.1`
 
 
