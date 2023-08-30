@@ -1,10 +1,10 @@
 ## install django:
 
-`mkdir vidly`
-
-`cd vidly`
-
-`pipenv install django==2.1`
+```python:
+mkdir vidly
+cd vidly
+pipenv install django==2.1
+```
 
 
 ## activate virtual environment:
