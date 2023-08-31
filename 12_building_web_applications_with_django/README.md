@@ -31,6 +31,11 @@ python3 manage.py migrate
 ### show sql query used to migrate data base:
 `python3 manage.py sqlmigrate movie 0001`
 
+## create admin:
+`python3 manage.py createsuperuser`
+
+
+
 
 
 
