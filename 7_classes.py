@@ -36,7 +36,6 @@ class Point:
     # we don't need to define __lt__ as python automatically figure it out.i
 
 
-
 point = Point()
 print(type(point))
 print(isinstance(point, Point))
